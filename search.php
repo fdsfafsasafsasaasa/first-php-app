@@ -20,12 +20,16 @@
 
 		$db = new SQLite3('food.db');
 
-		$results = $db->query('SELECT * FROM food WHERE ');
-		while ($row = $results->fetchArray()) {
-			echo('<div>
-					</a href="/food.php' + $row + '></a>
-			
-				</div>');
+		$results = $db->query('SELECT * FROM foods');
+		while ($row = $results->fetchArray()){
+			if (in_array($search, $row['name']) !== false) {
+				echo("
+                <div id=".$row['id']." class='food'>
+                    <div id='food-name'>".$row['name']."</div>
+                    <div id='food-cost'>$".$row['cost']."</div>
+                </div>
+            ");
+			}
 	    }
 
 

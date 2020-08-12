@@ -20,11 +20,10 @@
 
 		$db = new SQLite3('food.db');
 
-		$results = $db->query('SELECT * FROM food WHERE ');
+		$results = $db->query('SELECT * FROM food WHERE name='.$search);
 		while ($row = $results->fetchArray()) {
 			echo('<div>
-					</a href="/food.php' + $row + '></a>
-			
+					</a href="/food.php'.$row.'></a>
 				</div>');
 	    }
 

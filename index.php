@@ -21,14 +21,12 @@
 		$results = $db->query('SELECT * FROM foods');
         while ($row = $results->fetchArray()) {
             echo("
-                <div id="+$row['id']+" class='food'>
-                    <div id='food-name'>"+$row['name']+"</div>
-                    <div id='food-cost'>$"+$row['cost']+"</div>
+                <div id=".$row['id']." class='food'>
+                    <div id='food-name'>".$row['name']."</div>
+                    <div id='food-cost'>$".$row['cost']."</div>
                 </div>
             ");
 	    }
-
-
 	?>
 
 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
